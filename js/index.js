@@ -42,71 +42,81 @@ let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 const theNav = document.querySelector('nav');
-console.log('the nav', theNav);
+console.log("the nav", theNav);
 const childrenOfNav = theNav.children;
-console.log('childrenOfNav', childrenOfNav);
+console.log("children of nav", childrenOfNav);
 
-const firstLink = childrenOfNav[0];
-console.log(firstLink, "firsLink");
-// firstLink.href = 'https://google.com'
-firstLink.textContent = siteContent["nav"]["nav-item-1"];
+// theNav.children.forEach((child, i) => {
+//   child.textContent = siteContent["nav"][`nav-item-${i}`];
+// }); - for each is not a function for .children
 
-const secondLink = childrenOfNav[1];
-console.log(secondLink, "secondLink");
-secondLink.textContent = siteContent["nav"]["nav-item-2"];
+for (i = 0; i < theNav.children.length; i++) {
+  theNav.children[i].textContent = siteContent["nav"][`nav-item-${i+1}`];
+  theNav.children[i].style.color = "green";
+}
 
-const thirdLink = childrenOfNav[2];
-console.log(thirdLink, "thirdLink");
-thirdLink.textContent = "Vision";
 
-const fourthLink = childrenOfNav[3];
-console.log(fourthLink, "fourthLink");
-fourthLink.textContent = "Features";
+// not dry
+// const firstLink = childrenOfNav[0];
+// console.log(firstLink, "firsLink");
+// // firstLink.href = 'https://google.com'
+// firstLink.textContent = siteContent["nav"]["nav-item-1"];
 
-const fifthLink = childrenOfNav[4];
-console.log(fifthLink, "fifthLink");
-fifthLink.textContent = "About";
+// const secondLink = childrenOfNav[1];
+// console.log(secondLink, "secondLink");
+// secondLink.textContent = siteContent["nav"]["nav-item-2"];
 
-const sixthLink = childrenOfNav[5];
-console.log(sixthLink, "sixthLink");
-sixthLink.textContent = "Contact";
+// const thirdLink = childrenOfNav[2];
+// console.log(thirdLink, "thirdLink");
+// thirdLink.textContent = "Vision";
+
+// const fourthLink = childrenOfNav[3];
+// console.log(fourthLink, "fourthLink");
+// fourthLink.textContent = "Features";
+
+// const fifthLink = childrenOfNav[4];
+// console.log(fifthLink, "fifthLink");
+// fifthLink.textContent = "About";
+
+// const sixthLink = childrenOfNav[5];
+// console.log(sixthLink, "sixthLink");
+// sixthLink.textContent = "Contact";
 
 const cta = document.querySelector(".cta");
-console.log(cta);
+console.log("cta", cta);
 const ctaText = document.querySelector(".cta-text")
-console.log(ctaText);
+console.log("cta text", ctaText);
 
 const h1 = document.querySelector('h1');
-console.log(h1);
+console.log("header 1", h1);
 h1.innerHTML = `DOM <br> Is <br> Awesome`;
 const button = document.querySelector('button');
-button.textContent = "Get Started";
+button.textContent = siteContent["cta"]["button"];
 
 let headerImg = document.getElementById("cta-img");
 console.log(headerImg);
 headerImg.setAttribute('src', siteContent["cta"]["img-src"]);
 
 const mainContent = document.querySelector(".main-content");
-console.log(mainContent);
+console.log("main content", mainContent);
 
 const allH4s = document.querySelectorAll("h4");
-console.log(allH4s);
-
+console.log("h4's", allH4s);
 
 const firstH4 = allH4s[0];
 firstH4.textContent = siteContent["main-content"]["features-h4"];
 
 const secondH4 = allH4s[1];
-secondH4.textContent = "About";
+secondH4.textContent = siteContent["main-content"]["about-h4"]
 
 const thirdH4 = allH4s[2];
-thirdH4.textContent = "Services";
+thirdH4.textContent = siteContent["main-content"]["services-h4"]
 
 const fourthH4 = allH4s[3];
-fourthH4.textContent = "Product";
+fourthH4.textContent = siteContent["main-content"]["product-h4"]
 
 const fiveH4 = allH4s[4];
-fiveH4.textContent = "Vision";
+fiveH4.textContent = siteContent["main-content"]["vision-h4"]
 
 // const sixthH4 = allH4s[5];
 // sixthH4.textContent = "Contact";
@@ -115,19 +125,19 @@ const allPs = document.querySelectorAll("p");
 console.log(allPs);
 
 const p1 = allPs[0];
-p1.textContent = "Features content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.";
+p1.textContent = siteContent["main-content"]["features-content"];
 
 const p2 = allPs[1];
-p2.textContent = "About content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.";
+p2.textContent = siteContent["main-content"]["about-content"];
 
 const p3 = allPs[2];
-p3.textContent = "Services content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.";
+p3.textContent = siteContent["main-content"]["services-content"];
 
 const p4 = allPs[3];
-p4.textContent = "Product content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.";
+p4.textContent = siteContent["main-content"]["product-content"];
 
 const p5 = allPs[4];
-p5.textContent = "Vision content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.";
+p5.textContent = siteContent["main-content"]["vision-content"];
 
 let middleImg = document.getElementById("middle-img");
 console.log(middleImg);
@@ -152,20 +162,39 @@ const footer = document.querySelector("footer");
 console.log(footer);
 footer.textContent = siteContent["footer"]["copyright"];
 
-let greenLinks = document.querySelectorAll('a')
-greenLinks[0].style.color = 'green';
+// let greenLinks = document.querySelectorAll('a');
+// greenLinks.forEach(greenA => {
+//   greenA.style.color = "green";
+// }); -- added it to the nav section at top
 
-greenLinks = document.querySelectorAll('a')
-greenLinks[1].style.color = 'green';
+// original way I did it, figured out for each to make it dry
+// greenLinks[i].style.color = 'green';
 
-greenLinks = document.querySelectorAll('a')
-greenLinks[2].style.color = 'green';
+// greenLinks = document.querySelectorAll('a')
+// greenLinks[1].style.color = 'green';
 
-greenLinks = document.querySelectorAll('a')
-greenLinks[3].style.color = 'green';
+// greenLinks = document.querySelectorAll('a')
+// greenLinks[2].style.color = 'green';
 
-greenLinks = document.querySelectorAll('a')
-greenLinks[4].style.color = 'green';
+// greenLinks = document.querySelectorAll('a')
+// greenLinks[3].style.color = 'green';
 
-greenLinks = document.querySelectorAll('a')
-greenLinks[5].style.color = 'green';
+// greenLinks = document.querySelectorAll('a')
+// greenLinks[4].style.color = 'green';
+
+// greenLinks = document.querySelectorAll('a')
+// greenLinks[5].style.color = 'green';
+
+const newLinkProps = {
+  href: '#',
+  textContent: 'Extras',
+  className: 'menu-item',
+}
+const newlink = document.createElement('a')
+
+newlink.href = newLinkProps.href
+newlink.textContent = newLinkProps.textContent
+newlink.classList.add(newLinkProps.className)
+newlink.style.color = "green";
+
+theNav.appendChild(newlink)
